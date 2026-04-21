@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "FH Lecturis";
+  src: url("/fonts/fhlecturistest-light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "FH Lecturis";
+  src: url("/fonts/fhlecturistest-regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "FH Lecturis";
+  src: url("/fonts/fhlecturistest-bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "FH Lecturis Rounded";
+  src: url("/fonts/fhlecturisroundedtest-light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "FH Lecturis Rounded";
+  src: url("/fonts/fhlecturisroundedtest-regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "FH Lecturis Rounded";
+  src: url("/fonts/fhlecturisroundedtest-bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-hand: "Saira Stencil One", system-ui, sans-serif;
+  --font-logo: "FH Lecturis", system-ui, sans-serif;
+  --color-board-bg: #fafaf8;
+  --color-card-bg: #ffffff;
+  --color-todo: #a8d8ea;
+  --color-inprogress: #f9d977;
+  --color-done: #a8e6a1;
+  --color-primary: #5b9bd5;
+  --color-primary-hover: #4a89c4;
+  --color-danger: #e57373;
+  --color-danger-hover: #d45c5c;
+  --color-text: #333333;
+  --color-text-muted: #777777;
+  --color-border: #d4d4d4;
+  --color-hover: #f3f4f6;
+  --color-overlay: rgba(0, 0, 0, 0.3);
+}
+
+* {
+  font-family: var(--font-hand);
+}
+
+/* Dark theme overrides */
+.dark {
+  --color-board-bg: #0f172a;
+  --color-card-bg: #1e293b;
+  --color-todo: #2563eb;
+  --color-inprogress: #d97706;
+  --color-done: #16a34a;
+  --color-text: #f1f5f9;
+  --color-text-muted: #94a3b8;
+  --color-border: #334155;
+  --color-hover: #273548;
+  --color-overlay: rgba(0, 0, 0, 0.7);
+  color-scheme: dark;
+}
+
+.dark * {
+  scrollbar-color: #3a3a5a #16213e;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-board-bg);
+  background-image: radial-gradient(circle, var(--color-border) 1px, transparent 1px);
+  background-size: 20px 20px;
+  color: var(--color-text);
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+input,
+textarea {
+  font-family: var(--font-hand);
+  font-size: 1rem;
+}
+
+button {
+  font-family: var(--font-hand);
+  cursor: pointer;
+}
+
+/* Sidebar overlay */
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 40;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar-overlay--open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Sidebar panel */
+.sidebar-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 50;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.sidebar-panel--open {
+  transform: translateX(0);
+}
