@@ -6,7 +6,7 @@ import { supabase } from "../lib/supabase";
 import { hashPassword } from "../lib/crypto";
 import { getVisitedProjects, removeVisitedProject } from "../lib/visitedProjects";
 import { nanoid } from "nanoid";
-import { Sun, Moon, X, Plus, LogOut, FolderOpen, Lock, Trash2 } from "lucide-react";
+import { Sun, Moon, X, Plus, LogOut, FolderOpen, Lock } from "lucide-react";
 
 interface SidebarProps {
   onClose: () => void;

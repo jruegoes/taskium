@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { DragDropContext, Droppable, Draggable, type DropResult } from "@hello-pangea/dnd";
-import { Plus, GripVertical } from "lucide-react";
+import { Plus } from "lucide-react";
 import { supabase } from "../lib/supabase";
 import { KanbanColumn } from "./Column";
 import { CreateTicketModal } from "./CreateTicketModal";
